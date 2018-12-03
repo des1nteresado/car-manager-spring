@@ -47,5 +47,69 @@
     </c:if>
 </div> <br/>
 <a class="w3-button w3-teal" href="../../index.jsp">Back to main </a>
+
+<h1>Add a Book</h1>
+
+<c:url var="addAction" value="/cars/add"/>
+
+<form:form action="${addAction}" commandName="car">
+    <table>
+        <c:if test="${!empty car.model}">
+            <tr>
+                <td>
+                    <form:label path="id">
+                        <spring:message text="ID"/>
+                    </form:label>
+                </td>
+                <td>
+                    <form:input path="id" readonly="true" size="8" disabled="true"/>
+                    <form:hidden path="id"/>
+                </td>
+            </tr>
+        </c:if>
+        <tr>
+            <td>
+                <form:label path="model">
+                    <spring:message text="Model"/>
+                </form:label>
+            </td>
+            <td>
+                <form:input path="model"/>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <form:label path="country">
+                    <spring:message text="Country"/>
+                </form:label>
+            </td>
+            <td>
+                <form:input path="country"/>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <form:label path="type">
+                    <spring:message text="Type"/>
+                </form:label>
+            </td>
+            <td>
+                <form:input path="type"/>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <c:if test="${!empty car.model}">
+                    <input type="submit"
+                           value="<spring:message text="Edit Car"/>"/>
+                </c:if>
+                <c:if test="${empty car.model}">
+                    <input type="submit"
+                           value="<spring:message text="Add Car"/>"/>
+                </c:if>
+            </td>
+        </tr>
+    </table>
+</form:form>
 </body>
 </html>

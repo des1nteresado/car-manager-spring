@@ -13,5 +13,5 @@ public interface CarDao {
 
     Car getCarById(int id);
 
-    public List<Car> listCars();
+    List<Car> listCars();
 }
