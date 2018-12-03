@@ -30,6 +30,7 @@
         <property name="annotatedClasses">
             <list>
                 <value>com.des1nteresado.carmanager.model.Car</value>
+                <value>com.des1nteresado.carmanager.model.User</value>
             </list>
         </property>
         <property name="hibernateProperties">
@@ -41,13 +42,22 @@
         </property>
     </bean>
 
-    <!--BookDao and BookService beans-->
+    <!--CarDao and CarService beans-->
     <bean id="carDao" class="com.des1nteresado.carmanager.dao.CarDaoImpl">
-        <property name="sessionFactory" ref="hibernate4AnnotatedSessionFactory"/>
+        <property name="sessionCarFactory" ref="hibernate4AnnotatedSessionFactory"/>
     </bean>
 
     <bean id="carService" class="com.des1nteresado.carmanager.service.CarServiceImpl">
         <property name="carDao" ref="carDao"/>
+    </bean>
+
+    <!--UserDao and UserService beans-->
+    <bean id="userDao" class="com.des1nteresado.carmanager.dao.UserDaoImpl">
+        <property name="sessionFactory" ref="hibernate4AnnotatedSessionFactory"/>
+    </bean>
+
+    <bean id="userService" class="com.des1nteresado.carmanager.service.UserServiceImpl">
+        <property name="userDao" ref="userDao"/>
     </bean>
 
     <context:component-scan base-package="com.des1nteresado.carmanager"/>
@@ -57,6 +67,8 @@
     <bean id="transactionManager" class="org.springframework.orm.hibernate4.HibernateTransactionManager">
         <property name="sessionFactory" ref="hibernate4AnnotatedSessionFactory"/>
     </bean>
+
+
 
     <mvc:default-servlet-handler/>
     <mvc:annotation-driven/>

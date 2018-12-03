@@ -6,7 +6,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>All Cars</title>
+    <title>All Users</title>
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <style>
         body {
@@ -20,27 +20,25 @@
 </head>
 <body>
 <div class="w3-panel w3-teal" style="margin-bottom: 0; margin-top: 0">
-    <h2 class="w3-text-white" style="text-shadow:1px 1px 0 #444">List of cars</h2>
+    <h2 class="w3-text-white" style="text-shadow:1px 1px 0 #444">List of users</h2>
 </div>
 <div>
-    <c:if test="${!empty listCars}">
+    <c:if test="${!empty listUsers}">
         <table class="w3-table-all w3-hoverable">
             <tr class="w3-gray">
                 <td>ID</td>
-                <td>Model</td>
-                <td>Country</td>
-                <td>Type</td>
+                <td>Name</td>
+                <td>Age</td>
                 <td>Edit</td>
                 <td>Delete</td>
             </tr>
-            <c:forEach items="${listCars}" var = "car">
+            <c:forEach items="${listUsers}" var = "user">
                 <tr>
-                    <td>${car.getId()}</td>
-                    <td>${car.getModel()}</td>
-                    <td>${car.getCountry()}</td>
-                    <td>${car.getType()}</td>
-                    <td><a href="<c:url value='/edit/${car.id}'/>">Edit</a></td>
-                    <td><a href="<c:url value='/remove/${car.id}'/>">Delete</a></td>
+                    <td>${user.getId()}</td>
+                    <td>${user.getName()}</td>
+                    <td>${user.getAge()}</td>
+                    <td><a href="<c:url value='/editUser/${user.id}'/>">Edit</a></td>
+                    <td><a href="<c:url value='/removeUser/${user.id}'/>">Delete</a></td>
                 </tr>
             </c:forEach>
         </table>
@@ -48,13 +46,13 @@
 </div> <br/>
 <a class="w3-button w3-teal" href="../../index.jsp">Back to main </a>
 
-<h1>Add a Car</h1>
+<h1>Add a User</h1>
 
-<c:url var="addAction" value="/cars/add"/>
+<c:url var="addAction" value="/users/add"/>
 
-<form:form action="${addAction}" commandName="car">
+<form:form action="${addAction}" commandName="user">
     <table>
-        <c:if test="${!empty car.model}">
+        <c:if test="${!empty user.name}">
             <tr>
                 <td>
                     <form:label path="id">
@@ -69,43 +67,33 @@
         </c:if>
         <tr>
             <td>
-                <form:label path="model">
-                    <spring:message text="Model"/>
+                <form:label path="name">
+                    <spring:message text="Name"/>
                 </form:label>
             </td>
             <td>
-                <form:input path="model"/>
+                <form:input path="name"/>
             </td>
         </tr>
         <tr>
             <td>
-                <form:label path="country">
-                    <spring:message text="Country"/>
+                <form:label path="age">
+                    <spring:message text="Age"/>
                 </form:label>
             </td>
             <td>
-                <form:input path="country"/>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <form:label path="type">
-                    <spring:message text="Type"/>
-                </form:label>
-            </td>
-            <td>
-                <form:input path="type"/>
+                <form:input path="age"/>
             </td>
         </tr>
         <tr>
             <td colspan="2">
-                <c:if test="${!empty car.model}">
+                <c:if test="${!empty user.name}">
                     <input type="submit"
-                           value="<spring:message text="Edit Car"/>"/>
+                           value="<spring:message text="Edit User"/>"/>
                 </c:if>
-                <c:if test="${empty car.model}">
+                <c:if test="${empty user.name}">
                     <input type="submit"
-                           value="<spring:message text="Add Car"/>"/>
+                           value="<spring:message text="Add User"/>"/>
                 </c:if>
             </td>
         </tr>
