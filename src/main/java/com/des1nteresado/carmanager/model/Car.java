@@ -11,10 +11,10 @@ public class Car {
     private String model;
     private String country;
     private String type;
-/*
-    @ManyToOne (fetch = FetchType.LAZY, cascade=CascadeType.ALL)
-    @JoinColumn (name="user_id", nullable = false)
-    private User user;*/
+
+    @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @JoinColumn(name = "user_id")
+    private User user;
 
 
     public int getId() {
@@ -59,11 +59,11 @@ public class Car {
                 '}';
     }
 
-/*    public User getUser() {
+    public User getUser() {
         return user;
     }
 
     public void setUser(User user) {
         this.user = user;
-    }*/
+    }
 }

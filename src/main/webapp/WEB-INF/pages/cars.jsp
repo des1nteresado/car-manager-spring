@@ -26,7 +26,7 @@
     <c:if test="${!empty listCars}">
         <table class="w3-table-all w3-hoverable">
             <tr class="w3-gray">
-                <td>ID</td>
+                <td>ID(User ID)</td>
                 <td>Model</td>
                 <td>Country</td>
                 <td>Type</td>
@@ -35,7 +35,7 @@
             </tr>
             <c:forEach items="${listCars}" var = "car">
                 <tr>
-                    <td>${car.getId()}</td>
+                    <td>${car.getId()}(${car.getUser().getId()})</td>
                     <td>${car.getModel()}</td>
                     <td>${car.getCountry()}</td>
                     <td>${car.getType()}</td>
@@ -95,6 +95,16 @@
             </td>
             <td>
                 <form:input path="type"/>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <form:label path="user.id">
+                    <spring:message text="User ID"/>
+                </form:label>
+            </td>
+            <td>
+                <form:input path="user.id"/>
             </td>
         </tr>
         <tr>

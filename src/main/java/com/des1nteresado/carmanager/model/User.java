@@ -13,9 +13,9 @@ public class User {
     private String name;
     private int age;
 
- /*   @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, fetch = FetchType.LAZY, orphanRemoval = true)
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, fetch = FetchType.EAGER, orphanRemoval = true)
     private Set<Car> userCars;
-*/
+
     public int getId() {
         return id;
     }
@@ -49,11 +49,11 @@ public class User {
                 '}';
     }
 
-/*    public Set<Car> getUserCars() {
+    public Set<Car> getUserCars() {
         return userCars;
     }
 
     public void setUserCars(Set<Car> userCars) {
         this.userCars = userCars;
-    }*/
+    }
 }
