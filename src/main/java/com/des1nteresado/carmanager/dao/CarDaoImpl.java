@@ -33,7 +33,7 @@ public class CarDaoImpl implements CarDao {
     public void updateCar(Car car) {
         Session session = this.sessionFactory.getCurrentSession();
         User user = (User) session.load(User.class, car.getUser().getId());
-        car.setUser(user); //in add this!
+        car.setUser(user);
         session.update(car);
         logger.info("Car successfully update. Car details: " + car);
     }
