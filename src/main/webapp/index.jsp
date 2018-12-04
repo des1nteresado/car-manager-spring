@@ -7,10 +7,10 @@
 <body>
 <h3>web-app</h3>
 <br/>
-<a href="<c:url value="/cars"/>" target="_blank">Cars list</a>
-<a href="<c:url value="/users"/>" target="_blank">Users list</a>
-<a href="<c:url value="/cars-info"/>" target="_blank">CarsInfo list</a>
-<a href="<c:url value="/users-info"/>" target="_blank">UsersInfo list</a>
+<a href="<c:url value="/cars"/>">Cars list</a>
+<a href="<c:url value="/users"/>">Users list</a>
+<a href="<c:url value="/cars-info"/>">CarsInfo list</a>
+<a href="<c:url value="/users-info"/>">UsersInfo list</a>
 <br/>
 </body>
 </html>
