@@ -1,7 +1,6 @@
 package com.des1nteresado.carmanager.model;
 
 import javax.persistence.*;
-import java.util.HashSet;
 import java.util.Set;
 
 @Entity
@@ -13,8 +12,8 @@ public class User {
     private String name;
     private int age;
 
-    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, fetch = FetchType.EAGER, orphanRemoval = true)
-    private Set<Car> userCars;
+/*    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, fetch = FetchType.EAGER, orphanRemoval = true)
+    private Set<Car> userCars;*/
 
     public int getId() {
         return id;
@@ -49,11 +48,11 @@ public class User {
                 '}';
     }
 
-    public Set<Car> getUserCars() {
+ /*   public Set<Car> getUserCars() {
         return userCars;
     }
 
     public void setUserCars(Set<Car> userCars) {
         this.userCars = userCars;
-    }
+    }*/
 }

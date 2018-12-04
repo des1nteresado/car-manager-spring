@@ -31,6 +31,7 @@
             <list>
                 <value>com.des1nteresado.carmanager.model.Car</value>
                 <value>com.des1nteresado.carmanager.model.User</value>
+                <value>com.des1nteresado.carmanager.model.CarInfo</value>
             </list>
         </property>
         <property name="hibernateProperties">
@@ -44,7 +45,7 @@
 
     <!--CarDao and CarService beans-->
     <bean id="carDao" class="com.des1nteresado.carmanager.dao.CarDaoImpl">
-        <property name="sessionCarFactory" ref="hibernate4AnnotatedSessionFactory"/>
+        <property name="sessionFactory" ref="hibernate4AnnotatedSessionFactory"/>
     </bean>
 
     <bean id="carService" class="com.des1nteresado.carmanager.service.CarServiceImpl">
@@ -59,6 +60,15 @@
     <bean id="userService" class="com.des1nteresado.carmanager.service.UserServiceImpl">
         <property name="userDao" ref="userDao"/>
     </bean>
+
+    <!--CarInfoDao and CarInfoService beans-->
+    <!--<bean id="carInfoDao" class="com.des1nteresado.carmanager.dao.CarInfoDaoImpl">
+        <property name="sessionCarInfoFactory" ref="hibernate4AnnotatedSessionFactory"/>
+    </bean>
+
+    <bean id="carInfoService" class="com.des1nteresado.carmanager.service.UserServiceImpl">
+        <property name="carInfoDao" ref="carInfoDao"/>
+    </bean>-->
 
     <context:component-scan base-package="com.des1nteresado.carmanager"/>
 
