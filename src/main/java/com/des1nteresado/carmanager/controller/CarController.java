@@ -1,5 +1,4 @@
 package com.des1nteresado.carmanager.controller;
-
 import com.des1nteresado.carmanager.model.Car;
 import com.des1nteresado.carmanager.service.CarService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -39,14 +38,14 @@ public class CarController {
         return "redirect:/cars";
     }
 
-    @RequestMapping("/remove/{id}")
+    @RequestMapping("/removeCar/{id}")
     public String removeCar(@PathVariable("id") int id) {
         carService.removeCar(id);
 
         return "redirect:/cars";
     }
 
-    @RequestMapping("/edit/{id}")
+    @RequestMapping("/editCar/{id}")
     public String editCar(@PathVariable("id") int id, Model model) {
         model.addAttribute("car", carService.getCarById(id));
         model.addAttribute("listCars", carService.listCars());
@@ -54,10 +53,4 @@ public class CarController {
         return "cars";
     }
 
-    @RequestMapping("cardata/{id}")
-    public String cardata(@PathVariable("id") int id, Model model) {
-        model.addAttribute("car", carService.getCarById(id));
-
-        return "cardata";
-    }
 }

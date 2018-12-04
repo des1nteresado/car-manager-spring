@@ -39,8 +39,8 @@
                     <td>${car.getModel()}</td>
                     <td>${car.getCountry()}</td>
                     <td>${car.getType()}</td>
-                    <td><a href="<c:url value='/edit/${car.id}'/>">Edit</a></td>
-                    <td><a href="<c:url value='/remove/${car.id}'/>">Delete</a></td>
+                    <td><a href="<c:url value='/editCar/${car.id}'/>">Edit</a></td>
+                    <td><a href="<c:url value='/removeCar/${car.id}'/>">Delete</a></td>
                 </tr>
             </c:forEach>
         </table>

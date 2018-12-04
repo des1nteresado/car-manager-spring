@@ -62,13 +62,13 @@
     </bean>
 
     <!--CarInfoDao and CarInfoService beans-->
-    <!--<bean id="carInfoDao" class="com.des1nteresado.carmanager.dao.CarInfoDaoImpl">
-        <property name="sessionCarInfoFactory" ref="hibernate4AnnotatedSessionFactory"/>
+    <bean id="carInfoDao" class="com.des1nteresado.carmanager.dao.CarInfoDaoImpl">
+        <property name="sessionFactory" ref="hibernate4AnnotatedSessionFactory"/>
     </bean>
 
-    <bean id="carInfoService" class="com.des1nteresado.carmanager.service.UserServiceImpl">
+    <bean id="carInfoService" class="com.des1nteresado.carmanager.service.CarInfoServiceImpl">
         <property name="carInfoDao" ref="carInfoDao"/>
-    </bean>-->
+    </bean>
 
     <context:component-scan base-package="com.des1nteresado.carmanager"/>
 
@@ -77,8 +77,6 @@
     <bean id="transactionManager" class="org.springframework.orm.hibernate4.HibernateTransactionManager">
         <property name="sessionFactory" ref="hibernate4AnnotatedSessionFactory"/>
     </bean>
-
-
 
     <mvc:default-servlet-handler/>
     <mvc:annotation-driven/>

@@ -42,7 +42,7 @@ public class CarDaoImpl implements CarDao {
     public void removeCar(int id) {
         Session session = this.sessionFactory.getCurrentSession();
         Car car = (Car) session.load(Car.class, id);
-
+        car.setUser(null);
         if (car != null) {
             session.delete(car);
         }
