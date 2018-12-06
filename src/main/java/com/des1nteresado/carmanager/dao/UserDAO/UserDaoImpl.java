@@ -1,15 +1,12 @@
-package com.des1nteresado.carmanager.dao;
+package com.des1nteresado.carmanager.dao.UserDAO;
 
 import com.des1nteresado.carmanager.model.User;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import java.util.List;
 
 public class UserDaoImpl implements UserDao {
-    private static final Logger logger = LoggerFactory.getLogger(UserDaoImpl.class);
 
     private SessionFactory sessionFactory;
 
@@ -17,14 +14,12 @@ public class UserDaoImpl implements UserDao {
     public void addUser(User user) {
         Session session = this.sessionFactory.getCurrentSession();
         session.persist(user);
-        logger.info("User successfully saved. User details: " + user);
     }
 
     @Override
     public void updateUser(User user) {
         Session session = this.sessionFactory.getCurrentSession();
         session.update(user);
-        logger.info("User successfully updated. User details: " + user);
 
     }
 
@@ -36,14 +31,12 @@ public class UserDaoImpl implements UserDao {
         if (user != null) {
             session.delete(user);
         }
-        logger.info("User successfully removed. User details: " + user);
     }
 
     @Override
     public User getUserById(int id) {
         Session session = this.sessionFactory.getCurrentSession();
         User user = (User) session.load(User.class, id);
-        logger.info("User successfully loaded. User details: " + user);
         return user;
     }
 
@@ -52,10 +45,6 @@ public class UserDaoImpl implements UserDao {
     public List<User> listUsers() {
         Session session = this.sessionFactory.getCurrentSession();
         List<User> userList = session.createQuery("from User").list();
-
-        for(User user : userList) {
-            logger.info("User list: " + user);
-        }
         return userList;
     }
 

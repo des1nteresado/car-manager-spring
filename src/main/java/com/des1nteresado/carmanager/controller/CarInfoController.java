@@ -1,7 +1,7 @@
 package com.des1nteresado.carmanager.controller;
 
 import com.des1nteresado.carmanager.model.CarInfo;
-import com.des1nteresado.carmanager.service.CarInfoService;
+import com.des1nteresado.carmanager.service.CarInfoService.CarInfoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;

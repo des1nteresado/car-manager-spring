@@ -87,12 +87,14 @@
         </tr>
         <tr>
             <td colspan="2">
+                <br/>
                 <c:if test="${!empty user.name}">
-                    <input type="submit"
+                    <input type="submit" class="w3-button w3-teal"
                            value="<spring:message text="Edit User"/>"/>
                 </c:if>
+                <br/>
                 <c:if test="${empty user.name}">
-                    <input type="submit"
+                    <input type="submit" class="w3-button w3-teal"
                            value="<spring:message text="Add User"/>"/>
                 </c:if>
             </td>

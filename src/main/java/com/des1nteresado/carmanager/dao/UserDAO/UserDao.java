@@ -1,10 +1,11 @@
-package com.des1nteresado.carmanager.service;
+package com.des1nteresado.carmanager.dao.UserDAO;
 
 import com.des1nteresado.carmanager.model.User;
 
 import java.util.List;
 
-public interface UserService {
+public interface UserDao {
+
     void addUser(User user);
 
     void updateUser(User user);

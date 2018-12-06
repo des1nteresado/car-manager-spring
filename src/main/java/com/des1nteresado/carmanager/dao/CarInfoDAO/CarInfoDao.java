@@ -1,4 +1,4 @@
-package com.des1nteresado.carmanager.dao;
+package com.des1nteresado.carmanager.dao.CarInfoDAO;
 
 import com.des1nteresado.carmanager.model.CarInfo;
 

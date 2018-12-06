@@ -1,6 +1,6 @@
-package com.des1nteresado.carmanager.service;
+package com.des1nteresado.carmanager.service.UserInfoService;
 
-import com.des1nteresado.carmanager.dao.UserInfoDao;
+import com.des1nteresado.carmanager.dao.UserInfoDAO.UserInfoDao;
 import com.des1nteresado.carmanager.model.UserInfo;
 import org.springframework.stereotype.Service;
 

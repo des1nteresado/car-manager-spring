@@ -1,4 +1,4 @@
-package com.des1nteresado.carmanager.service;
+package com.des1nteresado.carmanager.service.CarInfoService;
 
 import com.des1nteresado.carmanager.model.CarInfo;
 

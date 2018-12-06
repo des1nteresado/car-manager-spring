@@ -109,12 +109,14 @@
         </tr>
         <tr>
             <td colspan="2">
+                <br/>
                 <c:if test="${!empty car.model}">
-                    <input type="submit"
+                    <input type="submit" class="w3-button w3-teal"
                            value="<spring:message text="Edit Car"/>"/>
                 </c:if>
+                <br />
                 <c:if test="${empty car.model}">
-                    <input type="submit"
+                    <input type="submit" class="w3-button w3-teal"
                            value="<spring:message text="Add Car"/>"/>
                 </c:if>
             </td>

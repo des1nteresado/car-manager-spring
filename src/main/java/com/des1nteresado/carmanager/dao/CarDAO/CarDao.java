@@ -1,10 +1,10 @@
-package com.des1nteresado.carmanager.service;
+package com.des1nteresado.carmanager.dao.CarDAO;
 
 import com.des1nteresado.carmanager.model.Car;
 
 import java.util.List;
 
-public interface CarService {
+public interface CarDao {
     void addCar(Car car);
 
     void updateCar(Car car);

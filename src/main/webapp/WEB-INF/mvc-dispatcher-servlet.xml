@@ -33,7 +33,6 @@
                 <value>com.des1nteresado.carmanager.model.User</value>
                 <value>com.des1nteresado.carmanager.model.CarInfo</value>
                 <value>com.des1nteresado.carmanager.model.UserInfo</value>
-
             </list>
         </property>
         <property name="hibernateProperties">
@@ -46,42 +45,40 @@
     </bean>
 
     <!--CarDao and CarService beans-->
-    <bean id="carDao" class="com.des1nteresado.carmanager.dao.CarDaoImpl">
+    <bean id="carDao" class="com.des1nteresado.carmanager.dao.CarDAO.CarDaoImpl">
         <property name="sessionFactory" ref="hibernate4AnnotatedSessionFactory"/>
     </bean>
 
-    <bean id="carService" class="com.des1nteresado.carmanager.service.CarServiceImpl">
+    <bean id="carService" class="com.des1nteresado.carmanager.service.CarService.CarServiceImpl">
         <property name="carDao" ref="carDao"/>
     </bean>
 
     <!--UserDao and UserService beans-->
-    <bean id="userDao" class="com.des1nteresado.carmanager.dao.UserDaoImpl">
+    <bean id="userDao" class="com.des1nteresado.carmanager.dao.UserDAO.UserDaoImpl">
         <property name="sessionFactory" ref="hibernate4AnnotatedSessionFactory"/>
     </bean>
 
-    <bean id="userService" class="com.des1nteresado.carmanager.service.UserServiceImpl">
+    <bean id="userService" class="com.des1nteresado.carmanager.service.UserService.UserServiceImpl">
         <property name="userDao" ref="userDao"/>
     </bean>
 
     <!--CarInfoDao and CarInfoService beans-->
-    <bean id="carInfoDao" class="com.des1nteresado.carmanager.dao.CarInfoDaoImpl">
+    <bean id="carInfoDao" class="com.des1nteresado.carmanager.dao.CarInfoDAO.CarInfoDaoImpl">
         <property name="sessionFactory" ref="hibernate4AnnotatedSessionFactory"/>
     </bean>
 
-    <bean id="carInfoService" class="com.des1nteresado.carmanager.service.CarInfoServiceImpl">
+    <bean id="carInfoService" class="com.des1nteresado.carmanager.service.CarInfoService.CarInfoServiceImpl">
         <property name="carInfoDao" ref="carInfoDao"/>
     </bean>
 
     <!--UserInfoDao and UserInfoService beans-->
-    <bean id="userInfoDao" class="com.des1nteresado.carmanager.dao.UserInfoDaoImpl">
+    <bean id="userInfoDao" class="com.des1nteresado.carmanager.dao.UserInfoDAO.UserInfoDaoImpl">
         <property name="sessionFactory" ref="hibernate4AnnotatedSessionFactory"/>
     </bean>
 
-    <bean id="userInfoService" class="com.des1nteresado.carmanager.service.UserInfoServiceImpl">
+    <bean id="userInfoService" class="com.des1nteresado.carmanager.service.UserInfoService.UserInfoServiceImpl">
         <property name="userInfoDao" ref="userInfoDao"/>
     </bean>
-
-    <context:component-scan base-package="com.des1nteresado.carmanager"/>
 
     <tx:annotation-driven transaction-manager="transactionManager"/>
 
